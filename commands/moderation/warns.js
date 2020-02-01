@@ -54,7 +54,10 @@ module.exports = {
         message.channel.send(warnberichart);
 
         } else if (warns[user.id].warns == 4) {
-
+            message.user.send("Jesteś Zbanowany na Serwerze Flawaniego!");
+            
+            wait(2)
+            
             message.guild.member(user).ban(reasone);
             message.channel.send(`${user} jest zbanowany!`)
 
