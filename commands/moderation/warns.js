@@ -16,8 +16,6 @@ module.exports = {
 
         if (!user) return message.channel.send("Podaj użytkownika lub użytkownika nie ma na tym serwerze");
 
-        if (user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Przepraszamy, tej osoby nie na się ostrzeć.");
-
         var reasone = args.join(" ").slice(22);
 
         if (!reasone) return message.channel.send("Proszę podać powód.")
