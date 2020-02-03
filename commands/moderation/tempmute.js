@@ -10,9 +10,9 @@ module.exports = {
 
         let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!tomute) return message.reply("Chmura nie znalazła użytkownika.");
-        if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Nie mogę ich wyciszyć!");
+        if(tomute.hasPermission("MANAGE_GUILD")) return message.reply("Nie mogę ich wyciszyć!");
         let muterole = message.guild.roles.find(`name`, "muted");
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+        if (!message.member.hasPermission("MANAGE_GUILD")) {
             return message.reply("❌ Nie masz uprawnień do wyciszania. Skontaktuj się z członkiem personelu")
                 .then(m => m.delete(5000));
         }
