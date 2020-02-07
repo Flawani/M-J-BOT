@@ -2,11 +2,14 @@ const { Client, RichEmbed, Collection } = require("discord.js");
 const { config } = require("dotenv");
 const fs = require("fs");
 const moment = require('moment')
+const WS = require('./ws/ws')
 
 
 const client = new Client({
     disableEveryone: true
 });
+
+var ws = new WS('675384794799931413', 5665, client)
 
 client.commands = new Collection();
 client.aliases = new Collection();
